@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+:root {
+    --cl-Soft-red: hsl(7, 99%, 70%);
+    --cl-Yellow: hsl(51, 100%, 49%);
+    --cl-Dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --cl-Dark-blue: hsl(198, 62%, 26%);
+    --cl-Dark-moderate-cyan: hsl(168, 34%, 41%);
+    --cl-Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --cl-Very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --cl-Dark-grayish-blue: hsl(232, 10%, 55%);
+    --cl-Grayish-blue: hsl(210, 4%, 67%);
+
+    --ff-barlow: 'Barlow', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+    --fw-semibold-barlow: 600;
+    --fw-bold700-fraunces: 700;
+    --fw-bold900-fraunces: 900;
+}
+
+body {
+    font-size: 18px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: minmax(250px, auto);
+}
+
+
+
+
+/* Header Box */
+
+.header-box, .testimonial-box, .picture-box, .footer-box {
+    grid-column: 1/-1;
+}
+
+.header-box {
+    background-image: url("./images/desktop/image-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row: span 2;
+
+    padding: 1rem 2rem 0;
+    color: white;
+}
+
+.header-box .nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-box .nav-bar .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3rem;
+    font-family: var(--ff-barlow);
+    font-weight: var(--fw-semibold-barlow);
+}
+
+.links li a {
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+.links li:last-child {
+    background-color: white;
+    padding: .6rem 1.3rem;
+    color: black;
+    border-radius: 2rem;
+    font-family: var(--ff-fraunces);
+    transition: .3s ease;
+}
+
+.links li:last-child:hover {
+    background-color: #6fcfff;
+    color: white;
+}
+
+.header-box h1 {
+    font-size: 2.5rem;
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold900-fraunces);
+    letter-spacing: .5rem;
+    margin: 3rem 0 4rem;
+}
+
+.header-box .down-arrow {
+    max-height: 75px;
+}
+
+
+
+
+/* Transform and Stand Box */
+
+.transform-box, .stand-box {
+    background-color: #fffbf8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 1.5rem;
+
+    padding: 6rem 0;
+    padding-left: 6rem;
+    padding-right: 3rem;
+}
+
+:is(.transform-box, .stand-box) h1 {
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold900-fraunces);
+    font-size: 1.5rem;
+    max-width: 75%;
+}
+
+:is(.transform-box, .stand-box) p {
+    font-family: var(--ff-barlow);
+}
+
+:is(.transform-box, .stand-box) a {
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold900-fraunces);
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+}
+
+:is(.transform-box, .stand-box) a .underline {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    background-color: var(--cl-Yellow);
+    border-radius: .5rem .5rem 1rem 1rem;
+    z-index: -1;
+}
+
+.stand-box a .underline {
+    background-color: var(--cl-Soft-red);
+}
+
+
+
+
+/* Transform and Red box */
+
+:is(.egg-box, .red-box) img {
+    width: 100%;
+    height: 100%;
+}
