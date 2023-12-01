@@ -19,3 +19,142 @@
 
     font-size: 18px;
 }
+
+body .container {
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+body a {
+    cursor: pointer;
+}
+
+
+
+
+/* Header */
+
+.main-header {
+    font-family: var(--ff-barlow);
+    font-weight: var(--fw-semibold-barlow);
+
+    height: 787px;
+    padding: 2rem;
+
+    background-image: url("./images/desktop/image-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 375px) {
+    .main-header {
+        background-image: url("./images/mobile/image-header.jpg");
+    }
+}
+
+.main-header .logo-and-link-container {
+    margin-bottom: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header .logo-and-link-container .logo {
+    display: grid;
+    place-content: center;
+}
+
+.main-header .logo-and-link-container .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    color: white;
+}
+
+.main-header .logo-and-link-container .links li:last-child {
+    background-color: white;
+    color: black;
+
+    transition: .3s ease;
+    cursor: pointer;
+
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold700-fraunces);
+
+    padding: .5rem 1rem;
+    border-radius: 20px;
+}
+
+.main-header .logo-and-link-container .links li:last-child:hover {
+    color: white;
+    background-color: #72d0fd;
+}
+
+.main-header .logo-and-link-container .links li a {
+    width: 100%;
+    height: 100%;
+}
+
+.main-header .logo-and-link-container .links li a:hover {
+    opacity: .8;
+}
+
+.main-header .logo-and-link-container .burger-menu-icon {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .main-header .logo-and-link-container {
+        position: relative;
+    }
+    .main-header .logo-and-link-container .links {
+        display: none;
+        width: 100%;
+        height: 300px;
+
+        position: absolute;
+        top: 200%;
+
+        background-color: white;
+        color: var(--cl-Grayish-blue);
+
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1.5rem;
+    }
+    .main-header .logo-and-link-container .links.visible {
+        display: flex;
+    }
+    .main-header .logo-and-link-container .links li:last-child  {
+        background-color: var(--cl-Yellow);
+    }
+    .main-header .logo-and-link-container .burger-menu-icon {
+        display: block;
+
+        font-size: 2rem;
+        color: white;
+
+        cursor: pointer;
+    }
+}
+
+.main-header .text-and-arrow-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 3.5rem;
+}
+
+.main-header .text-and-arrow-container h1 {
+    font-family: var(--ff-fraunces);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: white;
+    text-align: center;
+}
