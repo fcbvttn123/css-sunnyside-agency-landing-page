@@ -158,3 +158,149 @@ body a {
     color: white;
     text-align: center;
 }
+
+
+
+
+/* 6 box container */
+
+.six-box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 590px);
+}
+
+.transform-box, 
+.stand-box {
+    background-color: #fffbf8;
+    padding: 0 7rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+:is(.transform-box, .stand-box) h1 {
+    font-family: var(--ff-fraunces);
+    font-size: 1.7rem;
+    font-weight: var(--fw-bold900-fraunces);
+
+    max-width: 350px;
+}
+
+:is(.transform-box, .stand-box) p {
+    font-family: var(--ff-barlow);
+    font-weight: var(--fw-semibold-barlow);
+    color: var(--cl-Grayish-blue);
+}
+
+:is(.transform-box, .stand-box) a {
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold900-fraunces);
+    font-size: .8rem;
+
+    position: relative;
+    isolation: isolate;
+
+    width: fit-content;
+}
+
+:is(.transform-box, .stand-box) a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    right: -10px;
+    height: 40%;
+    background-color: var(--cl-Yellow);
+    z-index: -1;
+    opacity: .4;
+    border-radius: 10px;
+
+    transition: .3s ease-in-out;
+}
+
+:is(.transform-box, .stand-box) a:hover:before {
+    opacity: 1;
+}
+
+.stand-box a::before {
+    background-color: var(--cl-Soft-red);
+}
+
+.pink-box {
+    background-color: #fe6a5e;
+}
+
+:is(.pink-box, .egg-box) picture {
+    width: 100%;
+    height: 100%;
+}
+
+:is(.pink-box, .egg-box) picture :is(img, source) {
+    width: 100%;
+    height: 100%;
+}
+
+.graphic-box, 
+.photography-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.graphic-box {
+    background-image: url("./images/desktop/image-graphic-design.jpg");
+}
+
+@media (max-width: 375px) {
+    .graphic-box {
+        background-image: url("./images/mobile/image-graphic-design.jpg");
+    }
+}
+
+.photography-box {
+    background-image: url("./images/desktop/image-photography.jpg");
+}
+
+@media (max-width: 375px) {
+    .photography-box {
+        background-image: url("./images/mobile/image-photography.jpg");
+    }
+}
+
+:is(.graphic-box, .photography-box) h1 {
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-bold900-fraunces);
+    color: var(--cl-Dark-desaturated-cyan);
+    text-align: center;
+
+    margin-top: 380px;
+    margin-bottom: 20px;
+}
+
+:is(.graphic-box, .photography-box) p {
+    font-family: var(--ff-barlow);
+    font-weight: var(--fw-semibold-barlow);
+    color: var(--cl-Dark-desaturated-cyan);
+    text-align: center;
+
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/* Issues: 
+
+    + Triangle for the links box in mobile design
+
+    + Pink Box does not take the full width 
+
+*/
