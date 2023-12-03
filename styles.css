@@ -170,6 +170,25 @@ body a {
     grid-template-rows: repeat(3, 590px);
 }
 
+@media (max-width: 960px) {
+    .six-box-container {
+        grid-template-rows: repeat(3, 450px);
+    }
+}
+
+@media (max-width: 700px) {
+    .six-box-container {
+        grid-template-rows: repeat(3, 350px);
+    }
+}
+
+@media (max-width: 670px) {
+    .six-box-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 246px 340px 246px 340px repeat(2, 473px);
+    }
+}
+
 .transform-box, 
 .stand-box {
     background-color: #fffbf8;
@@ -179,6 +198,20 @@ body a {
     flex-direction: column;
     justify-content: center;
     row-gap: 2rem;
+}
+
+@media (max-width: 960px) {
+    .transform-box, 
+    .stand-box {
+        padding:0 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .transform-box, 
+    .stand-box {
+        row-gap: .5rem;
+    }
 }
 
 :is(.transform-box, .stand-box) h1 {
@@ -204,6 +237,13 @@ body a {
     isolation: isolate;
 
     width: fit-content;
+}
+
+@media (max-width: 670px) {
+    :is(.transform-box, .stand-box) :is(h1, p, a) {
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 
 :is(.transform-box, .stand-box) a::before {
@@ -248,6 +288,7 @@ body a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 0 1rem;
 }
 
 .graphic-box {
@@ -280,6 +321,26 @@ body a {
     margin-bottom: 20px;
 }
 
+@media (max-width: 960px) {
+    :is(.graphic-box, .photography-box) h1 {
+        margin-top: 270px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    :is(.graphic-box, .photography-box) h1 {
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 670px) {
+    :is(.graphic-box, .photography-box) h1 {
+        margin-top: 280px;
+    }
+}
+
+
 :is(.graphic-box, .photography-box) p {
     font-family: var(--ff-barlow);
     font-weight: var(--fw-semibold-barlow);
@@ -288,6 +349,27 @@ body a {
 
     max-width: 450px;
     margin: 0 auto;
+}
+
+@media (max-width: 670px) {
+    .six-box-container .egg-box {
+        order: 1;
+    }
+    .six-box-container .transform-box {
+        order: 2;
+    }
+    .six-box-container .pink-box {
+        order: 3;
+    }
+    .six-box-container .stand-box {
+        order: 4;
+    }
+    .six-box-container .graphic-box {
+        order: 5;
+    }
+    .six-box-container .photography-box {
+        order: 6;
+    }
 }
 
 
