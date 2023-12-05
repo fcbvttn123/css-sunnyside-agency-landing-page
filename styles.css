@@ -185,7 +185,7 @@ body a {
 @media (max-width: 670px) {
     .six-box-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 246px 340px 246px 340px repeat(2, 473px);
+        grid-template-rows: 400px 340px 400px 340px repeat(2, 473px);
     }
 }
 
@@ -269,18 +269,28 @@ body a {
     background-color: var(--cl-Soft-red);
 }
 
+:is(.egg-box, .pink-box) {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.egg-box {
+    background-image: url("./images/desktop/image-transform.jpg");
+}
+
 .pink-box {
-    background-color: #fe6a5e;
+    background-image: url("./images/desktop/image-stand-out.jpg");
 }
 
-:is(.pink-box, .egg-box) picture {
-    width: 100%;
-    height: 100%;
-}
-
-:is(.pink-box, .egg-box) picture :is(img, source) {
-    width: 100%;
-    height: 100%;
+@media (max-width: 375px) {
+    .egg-box {
+        background-image: url("./images/mobile/image-transform.jpg");
+    }
+    
+    .pink-box {
+        background-image: url("./images/mobile/image-stand-out.jpg");
+    }
 }
 
 .graphic-box, 
@@ -514,7 +524,5 @@ footer .sm {
 /* Issues: 
 
     + Triangle for the links box in mobile design
-
-    + Pink Box does not take the full width 
 
 */
